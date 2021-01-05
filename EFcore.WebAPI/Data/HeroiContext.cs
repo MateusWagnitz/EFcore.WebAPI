@@ -14,12 +14,22 @@ namespace EFcore.WebAPI.Data
         public DbSet<Arma> Armas { get; set; }
 
 
+
         public HeroiContext(DbContextOptions<HeroiContext> options) : base(options) { }
 
+
+        //SQL Server
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    optionsBuilder.UseMySqlServer("");
         //}
+
+        //MySQL
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseMySql("server=localhost;userid=developer;password=1234567;database=MSSQLSERVER");
+        //}
+        //server=localhost;database=library;user=user;password=password
     }
 
 }

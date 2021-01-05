@@ -30,8 +30,8 @@ namespace EFcore.WebAPI
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<HeroiContext>(options =>
-            options.UseMySql(Configuration.GetConnectionString("HeroiContext"), builder =>
-            builder.MigrationsAssembly("SalesWebMvc")));
+            options.UseMySql(Configuration.GetConnectionString("EFcoreWebAPIContext"), builder =>
+            builder.MigrationsAssembly("EFcore.WebAPI")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
