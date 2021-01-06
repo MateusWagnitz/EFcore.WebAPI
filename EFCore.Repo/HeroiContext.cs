@@ -10,6 +10,10 @@ namespace EFCore.Repo
 {
     public class HeroiContext : DbContext
     {
+        public HeroiContext()
+        {
+
+        }
         public HeroiContext(DbContextOptions<HeroiContext> options) : base(options) { }
 
         public DbSet<Heroi> Herois { get; set; }
@@ -17,6 +21,11 @@ namespace EFCore.Repo
         public DbSet<Arma> Armas { get; set; }
         public DbSet<HeroiBatalha> HeroisBatalhas { get; set; }
         public DbSet<IdentidadeSecreta> IdentidadesSecretas { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySql("server=localhost;userid=developer;password=1234567;database=MSSQLSERVER");
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
